@@ -1,0 +1,14 @@
+# docker run -d \
+#   --name mysql-init \
+#   -e MYSQL_ROOT_PASSWORD=1234 \
+#   mysql:latest
+# docker cp mysql-init:/var/lib/mysql /autostock
+# docker rm -f mysql-init
+
+
+# docker run -d \
+#   --name mysql-container \
+#   -e MYSQL_ROOT_PASSWORD=1234 \
+#   -v /autostock/mysql:/var/lib/mysql \
+#   -p 3306:3306 \
+#   mysql:latest
