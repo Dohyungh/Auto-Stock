@@ -1,4 +1,4 @@
-import { useStockStore } from "@/store/store";
+import { useStockStore } from "@/store/stockStore";
 import { Stock } from "../column";
 import { useState, useEffect } from "react";
 import { updateStock } from "@/api/api";

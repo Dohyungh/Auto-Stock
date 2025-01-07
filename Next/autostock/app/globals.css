@@ -1,13 +1,22 @@
-h1 {
-  font-size: 5rem;
-  color: Black;
-  margin-bottom: 3rem;
-}
-
 .PageContainer {
   width: 100vw;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
   padding: 1rem;
+}
+
+.Header {
+  display: flex;
+  align-items: center;
+}
+
+.Header > span {
+  display: inline-flex;
+  font-size: 5rem;
+  color: Black;
+  margin-right: 5rem;
 }
 
 .TableContainer {
@@ -23,7 +32,7 @@ h1 {
 .TableHead div {
   display: flex;
   align-items: center;
-  padding-left: 0.2rem;
+  padding-left: 0.5rem;
   font-weight: bold;
 }
 
@@ -86,7 +95,7 @@ h1 {
 .Cell {
   width: 8rem;
   height: 3rem;
-  border: 1.5px solid gray;
+  border: 2px solid lightgray;
   font-size: 1.1rem;
   margin-bottom: 0.2rem;
 }
@@ -171,8 +180,11 @@ button:hover {
 }
 
 .HeaderButtonContainer {
-  display: flex;
-  margin-bottom: 2rem;
+  display: inline-flex;
+  height: 100%;
+  align-items: end;
+  box-sizing: border-box;
+  padding-bottom: 1rem;
 }
 
 .ModalTitleContainer {
@@ -191,4 +203,39 @@ button:hover {
   justify-content: center;
   display: flex;
   width: 100%;
+}
+
+.AlarmContainer {
+  display: flex;
+  margin-top: 2rem;
+  height: 100%;
+}
+
+.AlarmPartition {
+  border-left: 1px lightgray solid;
+  display: inline-flex;
+  align-items: center;
+  flex-direction: column;
+  width: 12.1%;
+  height: 100%;
+}
+
+.AlarmPartition:first-child {
+  border-left: none;
+}
+
+.PartitionTitle {
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10%;
+  margin-bottom: 0.4rem;
+}
+
+.StockTextContainer {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  margin: 0.1rem 0 0.1rem 0;
 }

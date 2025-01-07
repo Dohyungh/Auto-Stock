@@ -15,7 +15,6 @@ export const getStockList = async () => {
   }
 };
 
-
 // 특정 종목 데이터 가져오기 (id로 조회)
 export const getStock = async (stockId: string) => {
   try {
@@ -59,6 +58,17 @@ export const deleteStock = async (stockId: string) => {
     return response.data;
   } catch (error) {
     console.error("주식 삭제 실패:", error);
+    throw error;
+  }
+};
+
+// 알리미 업데이트 신청
+export const getAlarmStock = async () => {
+  try {
+    const response = await axios.get(`${apiUrl}/stocks/alarm`);
+    return response.data;
+  } catch (error) {
+    console.error("알리미 기능 실패:", error);
     throw error;
   }
 };

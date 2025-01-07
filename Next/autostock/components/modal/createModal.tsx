@@ -1,4 +1,4 @@
-import { useStockStore } from "@/store/store";
+import { useStockStore } from "@/store/stockStore";
 import { Stock } from "../column";
 import { useState } from "react";
 import { createStock } from "@/api/api";
@@ -61,7 +61,6 @@ const CreateModal = () => {
           <input
             id="id"
             type="text"
-            value={formData.id}
             onChange={(e) => handleChange("id", e.target.value)}
             required
           />
@@ -71,20 +70,7 @@ const CreateModal = () => {
           <input
             id="name"
             type="text"
-            value={formData.name}
             onChange={(e) => handleChange("name", e.target.value)}
-            required
-          />
-        </div>
-        <div className="ModalField">
-          <label htmlFor="first_buy">{stockKeyMapper.first_buy}</label>
-          <input
-            id="first_buy"
-            type="number"
-            value={formData.first_buy}
-            onChange={(e) =>
-              handleChange("first_buy", parseFloat(e.target.value))
-            }
             required
           />
         </div>
@@ -93,9 +79,19 @@ const CreateModal = () => {
           <input
             id="second_buy"
             type="number"
-            value={formData.second_buy}
             onChange={(e) =>
               handleChange("second_buy", parseFloat(e.target.value))
+            }
+            required
+          />
+        </div>
+        <div className="ModalField">
+          <label htmlFor="first_buy">{stockKeyMapper.first_buy}</label>
+          <input
+            id="first_buy"
+            type="number"
+            onChange={(e) =>
+              handleChange("first_buy", parseFloat(e.target.value))
             }
             required
           />
@@ -105,7 +101,6 @@ const CreateModal = () => {
           <input
             id="first_sell"
             type="number"
-            value={formData.first_sell}
             onChange={(e) =>
               handleChange("first_sell", parseFloat(e.target.value))
             }
@@ -117,7 +112,6 @@ const CreateModal = () => {
           <input
             id="second_sell"
             type="number"
-            value={formData.second_sell}
             onChange={(e) =>
               handleChange("second_sell", parseFloat(e.target.value))
             }
@@ -129,7 +123,6 @@ const CreateModal = () => {
           <input
             id="third_sell"
             type="number"
-            value={formData.third_sell}
             onChange={(e) =>
               handleChange("third_sell", parseFloat(e.target.value))
             }
@@ -141,7 +134,6 @@ const CreateModal = () => {
           <input
             id="fourth_sell"
             type="number"
-            value={formData.fourth_sell}
             onChange={(e) =>
               handleChange("fourth_sell", parseFloat(e.target.value))
             }
@@ -153,7 +145,6 @@ const CreateModal = () => {
           <input
             id="fifth_sell"
             type="number"
-            value={formData.fifth_sell}
             onChange={(e) =>
               handleChange("fifth_sell", parseFloat(e.target.value))
             }
@@ -165,7 +156,6 @@ const CreateModal = () => {
           <input
             id="must_sell"
             type="number"
-            value={formData.must_sell}
             onChange={(e) =>
               handleChange("must_sell", parseFloat(e.target.value))
             }
