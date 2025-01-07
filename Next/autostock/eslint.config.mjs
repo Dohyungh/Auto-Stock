@@ -9,8 +9,11 @@ const compat = new FlatCompat({
   baseDirectory: __dirname,
 });
 
-const eslintConfig = [
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
-];
-
-export default eslintConfig;
+export default {
+  extends: [...compat.extends("next/core-web-vitals", "next/typescript")],
+  rules: {
+    "@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_" }], // 사용되지 않는 변수 경고 비활성화
+    "no-unused-vars": "off", // 기본 no-unused-vars 규칙 비활성화
+    "react-hooks/exhaustive-deps": "off", // useEffect의 의존성 배열 경고 비활성화
+  },
+};

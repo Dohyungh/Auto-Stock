@@ -10,7 +10,7 @@ export default function Table() {
 
   useEffect(() => {
     fetchStockList();
-  }, []); // 컴포넌트가 처음 렌더링될 때만 호출
+  }, [fetchStockList]); // 컴포넌트가 처음 렌더링될 때만 호출
 
   return (
     <>
