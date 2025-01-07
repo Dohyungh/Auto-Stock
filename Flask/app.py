@@ -1,10 +1,13 @@
 from flask import Flask, request, jsonify, make_response
 from flask_sqlalchemy import SQLAlchemy
 from flask_restx import Api, Resource, fields
-
+from flask_cors import CORS
+from alarm import check_stock
+import time
 app = Flask(__name__)
+CORS(app)
 api = Api(app, version='1.0', title='API 문서', description='Swagger 문서', doc="/api-docs")
-api = api.namespace('swagger', description='조회 API')
+api = api.namespace('autostock', description='조회 API')
 
 # MySQL 데이터베이스 설정
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://autostock:1234@localhost:3306/autostock'
@@ -87,5 +90,23 @@ class StockDetail(Resource):
         db.session.commit()
         return make_response(jsonify({"message": "stock deleted"}), 200)
 
+# 알리미 기능
+@api.route('/stocks/alarm')
+class StockAlarm(Resource):
+    def get(self):
+        stocks = Stock.query.all()
+
+        resp = {}
+        
+        for stock in stocks:
+            result = check_stock(stock)
+            resp.update(result)
+            time.sleep(0.5)
+        
+        return make_response(jsonify(resp), 200)
+        
+
+        
+            
 if __name__ == '__main__':
     app.run(debug=True)
