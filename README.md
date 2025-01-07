@@ -24,3 +24,10 @@
 #### Docker-Compose
 
     - 네트워킹
+
+## 포팅 메뉴얼
+
+- `mkdir /autostock/mysql`
+- `docker-compose up -d`
+
+![img](./assets/main.PNG)
