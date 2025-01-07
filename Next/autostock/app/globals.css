@@ -1,0 +1,194 @@
+h1 {
+  font-size: 5rem;
+  color: Black;
+  margin-bottom: 3rem;
+}
+
+.PageContainer {
+  width: 100vw;
+  height: 100vh;
+  padding: 1rem;
+}
+
+.TableContainer {
+  display: flex;
+  /* border: 1px solid black; */
+}
+
+.TableHead {
+  display: flex;
+  flex-direction: column;
+}
+
+.TableHead div {
+  display: flex;
+  align-items: center;
+  padding-left: 0.2rem;
+  font-weight: bold;
+}
+
+.TableHead :nth-child(2) {
+  margin-bottom: 2rem;
+}
+
+.TableHead :nth-child(4) {
+  margin-bottom: 2rem;
+}
+
+.TableHead :nth-child(9) {
+  margin-bottom: 2rem;
+}
+
+.ColumnContainer {
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ColumnContainer div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ColumnContainer :nth-child(2) {
+  margin-bottom: 2rem;
+}
+
+.ColumnContainer :nth-child(4) {
+  margin-bottom: 2rem;
+}
+
+.ColumnContainer :nth-child(9) {
+  margin-bottom: 2rem;
+}
+
+.ColumnContainer :nth-child(10) {
+  margin-bottom: 2rem;
+}
+
+.ColumnContainer :nth-child(11) {
+  background-color: lightskyblue;
+  font-weight: bold;
+  margin-bottom: 0.2rem;
+  border: none;
+  border-radius: 10px;
+}
+
+.ColumnContainer :nth-child(12) {
+  background-color: lightcoral;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+}
+
+.Cell {
+  width: 8rem;
+  height: 3rem;
+  border: 1.5px solid gray;
+  font-size: 1.1rem;
+  margin-bottom: 0.2rem;
+}
+
+button {
+  width: 7rem;
+  height: 3rem;
+  border-radius: 10px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button:hover {
+  background-color: lightgray !important;
+}
+
+.ModalContainer {
+  background-color: #f9fafb;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+  width: 60%;
+  max-width: 600px;
+}
+
+.ModalContainer label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.ModalContainer input {
+  display: flex;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.ModalContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+}
+
+.ModalField {
+  width: 80%;
+}
+
+.SubmitButton {
+  background-color: lightblue;
+  width: 7rem;
+  height: 3rem;
+  border-radius: 10px;
+  display: flex;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+  justify-self: end;
+}
+
+/* .SubmitButton:hover {
+  background-color: lightgray;
+} */
+
+.AddButton {
+  background-color: lightgreen;
+}
+
+.RefreshButton {
+  background-color: honeydew;
+}
+
+.HeaderButtonContainer {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.ModalTitleContainer {
+  font-size: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.CloseButton {
+  font-size: 2rem;
+}
+
+.NoData {
+  align-self: center;
+  justify-content: center;
+  display: flex;
+  width: 100%;
+}
