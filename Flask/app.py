@@ -8,7 +8,7 @@ app = Flask(__name__)
 CORS(app)
 api = Api(app, version='1.0', title='API 문서', description='Swagger 문서', doc="/api-docs")
 api = api.namespace('autostock', description='조회 API')
-
+time.sleep(10)
 # MySQL 데이터베이스 설정
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://autostock:1234@localhost:3306/autostock'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -109,4 +109,4 @@ class StockAlarm(Resource):
         
             
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000)
