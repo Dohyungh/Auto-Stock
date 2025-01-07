@@ -6,7 +6,7 @@ services:
     image: bley1217/auto-stock:be
     container_name: flask-backend
     ports:
-      - "5000:5000" 
+      - "5000:5000"
     environment:
       - FLASK_ENV=development
     networks:
@@ -19,7 +19,7 @@ services:
     image: bley1217/auto-stock:fe
     container_name: next-frontend
     ports:
-      - "3000:3000" 
+      - "3000:3000"
     networks:
       - app-network
     depends_on:
@@ -27,16 +27,17 @@ services:
 
   # MySQL (데이터베이스) 서비스
   mysql:
-    image: mysql:latest
+    image: bley1217/auto-stock:db  # 맞춤형 MySQL 이미지 사용
+    networks:
+        - app-network
     container_name: mysql-container
     environment:
       MYSQL_ROOT_PASSWORD: 1234
     volumes:
-      - /autostock/mysql:/var/lib/mysql 
+      - /autostock/mysql:/var/lib/mysql
     ports:
       - "3306:3306"
-    networks:
-      - app-network
+    restart: always
 
 networks:
   app-network:
