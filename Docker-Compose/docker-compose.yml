@@ -1,4 +1,4 @@
-version: '1'
+version: "1"
 
 services:
   # Flask (백엔드) 서비스
@@ -13,6 +13,7 @@ services:
       - app-network
     depends_on:
       - mysql
+    restart: always
 
   # Next.js (프론트엔드) 서비스
   frontend:
@@ -24,12 +25,13 @@ services:
       - app-network
     depends_on:
       - backend
+    restart: always
 
   # MySQL (데이터베이스) 서비스
   mysql:
-    image: bley1217/auto-stock:db  # 맞춤형 MySQL 이미지 사용
+    image: bley1217/auto-stock:db # 맞춤형 MySQL 이미지 사용
     networks:
-        - app-network
+      - app-network
     container_name: mysql-container
     environment:
       MYSQL_ROOT_PASSWORD: 1234
