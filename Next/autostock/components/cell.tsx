@@ -7,6 +7,10 @@ interface CellProps {
   onClick?: () => void;
 }
 
+export const formatNumber = (text: number | string) => {
+  if (typeof text == "string") return text;
+  return new Intl.NumberFormat("ko-KR").format(text);
+};
 const Cell: React.FC<CellProps> = (props) => {
   return (
     <div
@@ -26,7 +30,7 @@ const Cell: React.FC<CellProps> = (props) => {
           : { backgroundColor: "none" }
       }
     >
-      {props.text}
+      {formatNumber(props.text)}
     </div>
   );
 };

@@ -20,7 +20,7 @@ const Alarm: React.FC = () => {
 
     const intervalId = setInterval(() => {
       fetchAlarmState();
-    }, 10 * 60 * 1000); // 10 minutes
+    }, 3 * 60 * 1000); // 10 minutes
 
     return () => clearInterval(intervalId);
   }, []);
