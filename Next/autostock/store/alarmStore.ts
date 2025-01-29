@@ -7,7 +7,6 @@ interface AlarmStoreState {
   alarmState: Record<string, AlarmResult>[]; 
   fetchAlarmState: () => Promise<void>;
 }
-
 export const useAlarmStore = create<AlarmStoreState>()(
   persist(
     (set, get) => ({
@@ -20,7 +19,7 @@ export const useAlarmStore = create<AlarmStoreState>()(
           sound.play().catch((err) => console.log("Sound play error:", err));
 
           set((state) => ({
-            alarmState: [...state.alarmState, data],
+            alarmState: [...state.alarmState, data].slice(-100), // 🔹 마지막 100개만 유지
           }));
         } catch (error) {
           console.error("Failed to fetch alarm state:", error);
@@ -28,8 +27,8 @@ export const useAlarmStore = create<AlarmStoreState>()(
       },
     }),
     {
-      name: "alarm-storage", // localStorage에 저장될 키 이름
-      storage: createJSONStorage(() => localStorage), // ✅ JSON Storage 사용!
+      name: "alarm-storage",
+      storage: createJSONStorage(() => localStorage),
     }
   )
 );
