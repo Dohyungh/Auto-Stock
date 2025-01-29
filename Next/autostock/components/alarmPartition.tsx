@@ -13,8 +13,8 @@ const AlarmPartition: React.FC<AlarmPartitionProps> = function (props) {
 
   const goingUpOrDown = (name:string) => {
     if (alarmStateList.length <= 1) return "black";
-    const curr = alarmStateList[alarmStateList.length-1][name].curr_price;
-    const prev = alarmStateList[alarmStateList.length-2][name].curr_price;
+    const curr = alarmStateList[alarmStateList.length-1][name].position;
+    const prev = alarmStateList[alarmStateList.length-2][name].position;
     if (curr > prev) {
       return "red";
     }
