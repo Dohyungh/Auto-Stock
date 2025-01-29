@@ -27,7 +27,7 @@ const Column: React.FC<ColumnProps> = (props) => {
   const setCurrStock = useStockStore((state) => state.setCurrStock);
   const isUpdateModalOpen = useStockStore((state) => state.isUpdateModalOpen);
   const fetchStockList = useStockStore((state) => state.fetchStockList);
-  const currAlarmState = useAlarmStore((state) => state.alarmState)[stock.id];
+  const currAlarmState = useAlarmStore((state) => state.alarmState.length > 0 ? state.alarmState[state.alarmState.length - 1][stock.id] : null);
 
   const [currPosition, setCurrPosition] = useState<number>(-1);
   const [isMustSell, setIsMustSell] = useState<boolean>(false);
